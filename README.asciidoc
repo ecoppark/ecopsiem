@@ -1,8 +1,8 @@
-= Elasticsearch
+= Ecopsiem
 
-Elasticsearch is a distributed search and analytics engine optimized for speed and relevance on production-scale workloads. Elasticsearch is the foundation of Elastic's open Stack platform. Search in near real-time over massive datasets, perform vector searches, integrate with generative AI applications, and much more.
+Ecopsiem is a distributed search and analytics engine optimized for speed and relevance on production-scale workloads. Ecopsiem is the foundation of Elastic's open Stack platform. Search in near real-time over massive datasets, perform vector searches, integrate with generative AI applications, and much more.
 
-Use cases enabled by Elasticsearch include:
+Use cases enabled by Ecopsiem include:
 
 * https://www.elastic.co/search-labs/blog/articles/retrieval-augmented-generation-rag[Retrieval Augmented Generation (RAG)] 
 * https://www.elastic.co/search-labs/blog/categories/vector-search[Vector search]
@@ -14,70 +14,70 @@ Use cases enabled by Elasticsearch include:
 
 \... and more!
 
-To learn more about Elasticsearch's features and capabilities, see our
-https://www.elastic.co/products/elasticsearch[product page].
+To learn more about Ecopsiem's features and capabilities, see our
+https://www.elastic.co/products/Ecopsiem[product page].
 
 To access information on https://www.elastic.co/search-labs/blog/categories/ml-research[machine learning innovations] and the latest https://www.elastic.co/search-labs/blog/categories/lucene[Lucene contributions from Elastic], more information can be found in https://www.elastic.co/search-labs[Search Labs]. 
 
 [[get-started]]
 == Get started
 
-The simplest way to set up Elasticsearch is to create a managed deployment with
-https://www.elastic.co/cloud/as-a-service[Elasticsearch Service on Elastic
+The simplest way to set up Ecopsiem is to create a managed deployment with
+https://www.elastic.co/cloud/as-a-service[Ecopsiem Service on Elastic
 Cloud].
 
-If you prefer to install and manage Elasticsearch yourself, you can download
+If you prefer to install and manage Ecopsiem yourself, you can download
 the latest version from 
-https://www.elastic.co/downloads/elasticsearch[elastic.co/downloads/elasticsearch].
+https://www.elastic.co/downloads/Ecopsiem[elastic.co/downloads/Ecopsiem].
 
-=== Run Elasticsearch locally
+=== Run Ecopsiem locally
 
 //// 
-IMPORTANT: This content is replicated in the Elasticsearch guide. 
+IMPORTANT: This content is replicated in the Ecopsiem guide. 
 If you make changes, you must also update setup/set-up-local-dev-deployment.asciidoc.
 ////
 
-To try out Elasticsearch on your own machine, we recommend using Docker
-and running both Elasticsearch and Kibana.
+To try out Ecopsiem on your own machine, we recommend using Docker
+and running both Ecopsiem and Kibana.
 Docker images are available from the https://www.docker.elastic.co[Elastic Docker registry].
 
-NOTE: Starting in Elasticsearch 8.0, security is enabled by default. 
-The first time you start Elasticsearch, TLS encryption is configured automatically, 
+NOTE: Starting in Ecopsiem 8.0, security is enabled by default. 
+The first time you start Ecopsiem, TLS encryption is configured automatically, 
 a password is generated for the `elastic` user, 
 and a Kibana enrollment token is created so you can connect Kibana to your secured cluster.
 
 For other installation options, see the
-https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html[Elasticsearch installation documentation].
+https://www.elastic.co/guide/en/Ecopsiem/reference/current/install-Ecopsiem.html[Ecopsiem installation documentation].
 
-**Start Elasticsearch**
+**Start Ecopsiem**
 
 . Install and start https://www.docker.com/products/docker-desktop[Docker
 Desktop]. Go to **Preferences > Resources > Advanced** and set Memory to at least 4GB.
 
-. Start an Elasticsearch container:
+. Start an Ecopsiem container:
 +
 ----
 docker network create elastic
-docker pull docker.elastic.co/elasticsearch/elasticsearch:{version} <1>
-docker run --name elasticsearch --net elastic -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" -t docker.elastic.co/elasticsearch/elasticsearch:{version}
+docker pull docker.elastic.co/Ecopsiem/Ecopsiem:{version} <1>
+docker run --name Ecopsiem --net elastic -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" -t docker.elastic.co/Ecopsiem/Ecopsiem:{version}
 ----
-<1> Replace {version} with the version of Elasticsearch you want to run.
+<1> Replace {version} with the version of Ecopsiem you want to run.
 +
-When you start Elasticsearch for the first time, the generated `elastic` user password and
+When you start Ecopsiem for the first time, the generated `elastic` user password and
 Kibana enrollment token are output to the terminal.
 +
 NOTE: You might need to scroll back a bit in the terminal to view the password 
 and enrollment token.
 
 . Copy the generated password and enrollment token and save them in a secure 
-location. These values are shown only when you start Elasticsearch for the first time.
-You'll use these to enroll Kibana with your Elasticsearch cluster and log in.
+location. These values are shown only when you start Ecopsiem for the first time.
+You'll use these to enroll Kibana with your Ecopsiem cluster and log in.
 
 **Start Kibana**
 
-Kibana enables you to easily send requests to Elasticsearch and analyze, visualize, and manage data interactively.
+Kibana enables you to easily send requests to Ecopsiem and analyze, visualize, and manage data interactively.
 
-. In a new terminal session, start Kibana and connect it to your Elasticsearch container:
+. In a new terminal session, start Kibana and connect it to your Ecopsiem container:
 +
 ----
 docker pull docker.elastic.co/kibana/kibana:{version} <1>
@@ -90,25 +90,25 @@ When you start Kibana, a unique URL is output to your terminal.
 . To access Kibana, open the generated URL in your browser.
 
   .. Paste the enrollment token that you copied when starting
-  Elasticsearch and click the button to connect your Kibana instance with Elasticsearch.
+  Ecopsiem and click the button to connect your Kibana instance with Ecopsiem.
 
   .. Log in to Kibana as the `elastic` user with the password that was generated
-  when you started Elasticsearch.
+  when you started Ecopsiem.
 
-**Send requests to Elasticsearch**
+**Send requests to Ecopsiem**
 
-You send data and other requests to Elasticsearch through REST APIs. 
-You can interact with Elasticsearch using any client that sends HTTP requests, 
-such as the https://www.elastic.co/guide/en/elasticsearch/client/index.html[Elasticsearch
+You send data and other requests to Ecopsiem through REST APIs. 
+You can interact with Ecopsiem using any client that sends HTTP requests, 
+such as the https://www.elastic.co/guide/en/Ecopsiem/client/index.html[Ecopsiem
 language clients] and https://curl.se[curl]. 
 Kibana's developer console provides an easy way to experiment and test requests. 
 To access the console, go to **Management > Dev Tools**.
 
 **Add data**
 
-You index data into Elasticsearch by sending JSON objects (documents) through the REST APIs.  
+You index data into Ecopsiem by sending JSON objects (documents) through the REST APIs.  
 Whether you have structured or unstructured text, numerical data, or geospatial data, 
-Elasticsearch efficiently stores and indexes it in a way that supports fast searches. 
+Ecopsiem efficiently stores and indexes it in a way that supports fast searches. 
 
 For timestamped data such as logs and metrics, you typically add documents to a
 data stream made up of multiple auto-generated backing indices.
@@ -170,7 +170,7 @@ GET customer/_search
 You can use Discover in Kibana to interactively search and filter your data.
 From there, you can start creating visualizations and building and sharing dashboards.
 
-To get started, create a _data view_ that connects to one or more Elasticsearch indices,
+To get started, create a _data view_ that connects to one or more Ecopsiem indices,
 data streams, or index aliases.
 
 . Go to **Management > Stack Management > Kibana > Data Views**.
@@ -184,14 +184,14 @@ To start exploring, go to **Analytics > Discover**.
 [[upgrade]]
 == Upgrade
 
-To upgrade from an earlier version of Elasticsearch, see the
-https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html[Elasticsearch upgrade
+To upgrade from an earlier version of Ecopsiem, see the
+https://www.elastic.co/guide/en/Ecopsiem/reference/current/setup-upgrade.html[Ecopsiem upgrade
 documentation].
 
 [[build-source]]
 == Build from source
 
-Elasticsearch uses https://gradle.org[Gradle] for its build system.
+Ecopsiem uses https://gradle.org[Gradle] for its build system.
 
 To build a distribution for your local OS and print its output location upon
 completion, run:
@@ -218,8 +218,8 @@ To run the test suite, see xref:TESTING.asciidoc[TESTING].
 [[docs]]
 == Documentation
 
-For the complete Elasticsearch documentation visit
-https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html[elastic.co].
+For the complete Ecopsiem documentation visit
+https://www.elastic.co/guide/en/Ecopsiem/reference/current/index.html[elastic.co].
 
 For information about our documentation processes, see the
 xref:docs/README.asciidoc[docs README].
@@ -227,7 +227,7 @@ xref:docs/README.asciidoc[docs README].
 [[examples]]
 == Examples and guides
 
-The https://github.com/elastic/elasticsearch-labs[`elasticsearch-labs`] repo contains executable Python notebooks, sample apps, and resources to test out Elasticsearch for vector search, hybrid search and generative AI use cases.
+The https://github.com/elastic/Ecopsiem-labs[`Ecopsiem-labs`] repo contains executable Python notebooks, sample apps, and resources to test out Ecopsiem for vector search, hybrid search and generative AI use cases.
 
 
 [[contribute]]
@@ -239,16 +239,9 @@ For contribution guidelines, see xref:CONTRIBUTING.md[CONTRIBUTING].
 == Questions? Problems? Suggestions?
 
 * To report a bug or request a feature, create a
-https://github.com/elastic/elasticsearch/issues/new/choose[GitHub Issue]. Please
+https://github.com/elastic/Ecopsiem/issues/new/choose[GitHub Issue]. Please
 ensure someone else hasn't created an issue for the same topic.
 
-* Need help using Elasticsearch? Reach out on the
+* Need help using Ecopsiem? Reach out on the
 https://discuss.elastic.co[Elastic Forum] or https://ela.st/slack[Slack]. A
 fellow community member or Elastic engineer will be happy to help you out.
-
-[[For internal]]
-*Build to docker image
-docker build -t kaolat/sample-lab-kaolat:latest -f Dockerfile.dockerfile .
-docker login
-docker tag <local-image-id> kaolat/sample-lab-kaolat:latest
-docker push kaolat/sample-lab-kaolat:latest
